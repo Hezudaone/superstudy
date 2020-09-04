@@ -5,7 +5,7 @@ import os
 import unittest
 
 from BeautifulReport import BeautifulReport
-
+#这是执行文件
 root_dir = os.path.dirname(os.path.abspath(__file__)).replace('\\', '/')
 test_dir = root_dir
 report_dir = root_dir + '/report'
