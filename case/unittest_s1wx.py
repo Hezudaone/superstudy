@@ -11,6 +11,7 @@ class S1_wanxue_cn(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.driver = webdriver.Chrome()
+        # self.driver = webdriver.Firefox()
         self.driver.get('https://s1.wanxue.cn')
         self.driver.maximize_window()
 
@@ -137,6 +138,7 @@ class S1_wanxue_cn(unittest.TestCase):
         self.assertIn('列表', flag, msg='全国非统考专业课,视频播放失败')
 
     def test_d_liankao(self):
+
         '''资料中心-联考/非联考'''
         self.driver.get('https://s1.wanxue.cn/sls/nonDownload/queryRegionAll')
         self.driver.find_element_by_xpath('/html/body/div[5]/div[3]/div/div[1]/div[2]/div[1]/a/div/p').click()
@@ -160,12 +162,10 @@ class S1_wanxue_cn(unittest.TestCase):
         all_hand = self.driver.window_handles
         self.driver.switch_to_window(all_hand[1])
         time.sleep(2)
-        self.driver.find_element_by_xpath('//*[@id="type57"]/dl[5]/dd[1]/a').click()
+        self.driver.find_element_by_xpath('/html/body/div[6]/div[2]/div/div/div/dl/dd[1]/a').click()
 
-        flag = self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div[3]/ul/li[3]/a').text
-        self.assertIn('订单', flag, msg='资料中心异常')
-        time.sleep(4)
-        self.driver.close()
+
+
         self.driver.switch_to_window(all_hand[0])
 
 

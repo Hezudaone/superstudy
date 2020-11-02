@@ -11,6 +11,7 @@ class S_wanxue_cn(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.driver = webdriver.Chrome()
+        # self.driver = webdriver.Firefox()
         self.driver.get('https://s.wanxue.cn')
         self.driver.maximize_window()
         self.driver.implicitly_wait(2)
@@ -33,6 +34,7 @@ class S_wanxue_cn(unittest.TestCase):
 
     #
     def test_b_intellect_study(self):
+
         '''智能课程学习'''
         # 进入政治课程
         # self.driver.find_element_by_xpath('/html/body/div[10]/div[3]/div[2]/div[4]/div[6]/div[2]/dl/dd/a').click()
@@ -123,6 +125,7 @@ class S_wanxue_cn(unittest.TestCase):
                     self.driver.find_element_by_xpath('/html/body/div[6]/div/a[1]').click()
 
     def test_c_feitongkao_av(self):
+
         '''全国非统考专业课'''
         self.driver.get('https://s.wanxue.cn/sls/notUnifiedExam/getContent')
         self.driver.find_element_by_xpath('//*[@id="regionName_1"]/div[2]/div[2]/dl/dd/a').click()
@@ -135,6 +138,7 @@ class S_wanxue_cn(unittest.TestCase):
         self.assertIn('列表', flag, msg='全国非统考专业课,视频播放失败')
 
     def test_d_liankao(self):
+
         '''资料中心-联考/非联考'''
         self.driver.get('https://s.wanxue.cn/sls/nonDownload/queryRegionAll')
         self.driver.find_element_by_xpath('/html/body/div[5]/div[3]/div/div[1]/div[2]/div[1]/a/div/p').click()
@@ -169,6 +173,7 @@ class S_wanxue_cn(unittest.TestCase):
 
 
     def test_e_chaojishuk(self):
+
         '''超级书库'''
         self.driver.get('https://s.wanxue.cn/sls/superbook/getHtml')
         self.driver.find_element_by_xpath('/html/body/div[4]/div[3]/div[1]/ul/li[3]/a').click()
@@ -186,6 +191,7 @@ class S_wanxue_cn(unittest.TestCase):
         self.driver.switch_to_window(all_hand[0])
 
     def test_f_zonghezixun(self):
+
         '''综合资讯'''
         self.driver.get('https://s.wanxue.cn/sls/information/index')
         self.driver.find_element_by_xpath('//*[@id="t1"]/tbody/tr[1]/td[2]/a').click()
@@ -250,6 +256,7 @@ class S_wanxue_cn(unittest.TestCase):
 
     #
     def test_h_zhiboke(self):
+
         '''直播课堂'''
         self.driver.get('https://s.wanxue.cn/sls/liveVideoView/queryLivePublicLesson')
         #self.driver.find_element_by_xpath('/html/body/div[10]/div[2]/div/div[2]/ul/li[7]/a[2]').click()
@@ -283,6 +290,7 @@ class S_wanxue_cn(unittest.TestCase):
 
     # 直播课堂--直播课  //*[@id="body"]/div[2]/div[2]/div/div[2]/div[1]/ul/li[2]/a/div[2]/div
     def zhiboke(self):
+
         self.driver.find_element_by_xpath('/html/body/div[4]/div[3]/div[3]/h2/p/a[2]').click()
         self.driver.find_element_by_link_text('2021届考研数学基础阶段课程-高数上（二期）').click()
         # self.driver.find_element_by_xpath('//*[@id="ll"]/dl[1]/dd[1]/a').click()#2021届考研数学基础阶段课程-线代(二期)

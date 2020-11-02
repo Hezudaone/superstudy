@@ -11,6 +11,7 @@ class S2_wanxue_cn(unittest.TestCase):
     @classmethod
     def setUpClass(self):
         self.driver = webdriver.Chrome()
+        #self.driver = webdriver.Firefox()
         self.driver.get('https://s2.wanxue.cn')
         self.driver.maximize_window()
 
